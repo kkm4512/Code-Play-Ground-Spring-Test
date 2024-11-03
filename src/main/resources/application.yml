@@ -1,0 +1,28 @@
+server:
+  port: 8080
+# DB config
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/study?serverTimezone=Asia/Seoul
+    username: root
+    password: '!@Skdud340'
+  # DB update
+  jpa:
+    hibernate:
+      ddl-auto: update
+    # sql
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+
+logging:
+  level:
+    com:
+      example:
+        codplaygroundspringtest=DEBUG:
